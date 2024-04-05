@@ -124,7 +124,7 @@ export default function Home() {
           >
             Powered by{" "}
             <Image
-              src="/voltaai.svg"
+              src="voltaai.svg"
               alt="VoltaAi Logo"
               className="dark:invert"
               width={85}

@@ -43,7 +43,7 @@ const ClientRegisterModal = () => {
       >
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/register_qrcode.png"
+          src="register_qrcode.png"
           alt="Next.js Logo"
           width={380}
           height={237}

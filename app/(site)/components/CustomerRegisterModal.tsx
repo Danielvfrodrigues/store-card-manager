@@ -9,7 +9,7 @@ import {
 
 import useCustomerRegisterModal from "@/hooks/useCustomerRegisterModal";
 
-import Modal from "./Modal";
+import Modal from "../../../components/Modal";
 import Image from "next/image";
 import ModalQrCode from "@/components/ModalQrCode";
 

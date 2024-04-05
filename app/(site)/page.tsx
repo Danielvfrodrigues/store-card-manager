@@ -3,6 +3,8 @@
 import Image from "next/image";
 import useCustomerRegisterModal from "@/hooks/useCustomerRegisterModal";
 import useStampModal from "@/hooks/useStampModal";
+import {HiArrowRight, HiUser} from "react-icons/hi2";
+import {HiCollection} from "react-icons/hi";
 
 export default function Home() {
   const customerRegisterModal = useCustomerRegisterModal();
@@ -10,24 +12,24 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="grid grid-cols-2 w-full items-center justify-between">
-        <p className="fixed left-0 top-0 flex w-full text-2xl justify-center lg:static lg:w-auto  lg:rounded-xl ">
-          Seja bem-vindo!
+        <p className="fixed left-0 top-0 flex w-full text-2xl justify-center lg:static lg:w-auto lg:rounded-xl ">
+          Welcome!
         </p>
         <div
           className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="pointer-events-none flex text-sm place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://www.voltaai.com.br"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            Powered by{" "}
             <Image
               src="/voltaai.svg"
               alt="VoltaAi Logo"
               className="dark:invert"
-              width={85}
-              height={9}
+              width={105}
+              height={29}
               priority
             />
           </a>
@@ -52,70 +54,44 @@ export default function Home() {
         <button
           onClick={customerRegisterModal.onOpen}
           className="group rounded-lg border border-transparent text-left px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Cadastrar{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <h2 className={`mb-3 text-2xl font-semibold flex items-center justify-between `}>
+            Register{" "}
+            <HiUser
+              className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"/>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Cadastre um novo cliente.
+            Register a new client.
           </p>
         </button>
 
         {/* Stamp */}
         <button
           onClick={stampModal.onOpen}
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          rel="noopener noreferrer"
+          className="group rounded-lg border border-transparent text-left px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Carimbar{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <h2 className={`mb-3 text-2xl font-semibold flex items-center justify-between `}>
+            Stamp{" "}
+            <HiCollection
+              className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"/>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Adicione um carimbo ao cliente.
+            Mark a stamp to a client&apos;s card.
           </p>
         </button>
-
-        {/* Delete */}
-        <a
-          href="/delete"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={`divider`}></div>
+        <button
+          className="group rounded-lg border border-transparent text-left px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Excluir{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Exclua um cliente.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Sair{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <h2 className={`mb-3 text-2xl font-semibold flex items-center justify-between `}>
+            Logout{" "}
+            <HiArrowRight
+              className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"/>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Estamos fechados.
+            We&apos;re closed.
           </p>
-        </a>
+        </button>
       </div>
     </main>
   );

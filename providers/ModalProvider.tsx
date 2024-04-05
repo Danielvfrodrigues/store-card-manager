@@ -1,9 +1,10 @@
 "use client"
 
 import AuthModal from "@/components/AuthModal";
-import UploadModal from "@/components/UploadModal";
+import CustomerRegisterModal from "@/app/(site)/components/CustomerRegisterModal";
 
 import { useEffect, useState } from "react";
+import StampModal from "@/app/(site)/components/StampModal";
 
 const ModalProvider = () => {
     const [isMounted, setIsMounted] = useState(false);
@@ -19,7 +20,8 @@ const ModalProvider = () => {
     return(
         <>
             <AuthModal />
-            <UploadModal />
+            <CustomerRegisterModal />
+            <StampModal />
         </>
     );
 }
